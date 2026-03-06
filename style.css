@@ -1,0 +1,352 @@
+/* 全局样式 - 彻底禁用文本选中 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+body {
+    background: #eef2f7;
+    min-height: 100vh;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 页头：蓝黑色背景 */
+.app-header {
+    background: #0f172a;
+    padding: 8px 0;
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.app-logo i {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* 主内容区 */
+.app-main {
+    padding: 16px 20px;
+    flex: 1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 搜索模块 */
+.search-module {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 所有按钮：无文本+图标+统一蓝色+放大尺寸 */
+.search-box button, .collect-button, .edit, .del {
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    background: linear-gradient(to bottom, #3b82f6, #2563eb);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 查询按钮：图标大小适配 */
+.search-box button {
+    width: 50px; /* 固定宽度，仅显示图标 */
+    height: 44px; /* 和输入框高度一致 */
+    font-size: 18px;
+}
+
+/* 收藏按钮：图标+文本（保留文本但强制禁用选中） */
+.collect-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    gap: 6px;
+}
+
+/* 编辑/删除按钮：仅图标，放大尺寸 */
+.edit, .del {
+    width: 44px; /* 固定宽度，放大按钮 */
+    height: 36px; /* 固定高度 */
+    font-size: 16px; /* 图标放大 */
+}
+
+/* 按钮hover效果 */
+.search-box button:hover, .collect-button:hover, .edit:hover, .del:hover {
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+    transform: translateY(-1px);
+    background: linear-gradient(to bottom, #2563eb, #1d4ed8);
+}
+
+/* 天气卡片 */
+.weather-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 24px 0;
+    color: #64748b;
+}
+
+.empty-state i {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+/* 城市温度区域 */
+.weather-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.city-and-temp {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.city-name {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.temp {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+/* 天气信息网格 */
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.weather-item {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 14px 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.weather-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.weather-item-icon {
+    font-size: 20px;
+    color: #2563eb;
+    margin-bottom: 6px;
+}
+
+.weather-item .label {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.weather-item .value {
+    font-weight: 600;
+}
+
+/* 收藏模块 */
+.collection-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.collection-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.count {
+    background: #2563eb;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.collection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.fav-city {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.fav-info {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* 编辑删除按钮容器 */
+.fav-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.empty-fav {
+    text-align: center;
+    padding: 16px 0;
+    color: #94a3b8;
+}
+
+.empty-fav i {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.loading {
+    text-align: center;
+    padding: 24px 0;
+    color: #64748b;
+}
+
+/* 页脚：蓝黑色背景 */
+.app-footer {
+    background: #0f172a;
+    padding: 16px 0; /* 增加了页脚的高度 */
+    margin-top: 16px;
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 18px; /* 增加了字体大小 */
+    color: #ffffff;
+}
+
+/* 弹窗居中调整 */
+window.alert = function(message) {
+    const alertBox = document.createElement('div');
+    alertBox.style.position = 'fixed';
+    alertBox.style.left = '50%';
+    alertBox.style.top = '50%';
+    alertBox.style.transform = 'translate(-50%, -50%)';
+    alertBox.style.padding = '20px';
+    alertBox.style.backgroundColor = '#ffffff';
+    alertBox.style.border = '1px solid #ccc';
+    alertBox.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    alertBox.style.zIndex = '9999';
+    alertBox.innerHTML = message;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerText = '关闭';
+    closeBtn.style.marginTop = '10px';
+    closeBtn.onclick = function() {
+        alertBox.remove();
+    };
+    
+    alertBox.appendChild(closeBtn);
+    document.body.appendChild(alertBox);
+}
+
+/* 响应式适配 */
+@media (max-width: 992px) {
+    .weather-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .weather-grid {
+        grid-template-columns: 1fr;
+    }
+}
