@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6322WeatherApp - 商业级天气查询应用</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 页面容器 -->
+    <div class="weather-container">
+        <!-- 头部区域 -->
+        <header class="weather-header">
+            <h1 class="header-title">
+                <i class="fas fa-cloud-sun"></i> 6322WeatherApp
+            </h1>
+            <p class="header-subtitle">精准查询 · 贴心收藏</p>
+        </header>
+
+        <!-- 搜索区域 -->
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="请输入城市名（如北京、上海）" class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i> 查询天气
+                </button>
+            </div>
+            <div id="loading" class="loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> 正在查询...
+            </div>
+        </section>
+
+        <!-- 天气结果区域 -->
+        <section id="weatherResult" class="weather-result" style="display: none;">
+            <div class="result-header">
+                <h2 id="resultCity" class="result-city"></h2>
+                <button id="collectBtn" class="collect-btn">
+                    <i class="fas fa-star"></i> 收藏该城市
+                </button>
+            </div>
+            <div class="weather-card">
+                <div class="temp-box">
+                    <span id="tempValue" class="temp-value"></span>
+                    <span class="temp-unit">℃</span>
+                </div>
+                <div class="weather-info">
+                    <div class="info-item">
+                        <i class="fas fa-cloud info-icon"></i>
+                        <span id="weatherType" class="info-text"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-wind info-icon"></i>
+                        <span id="windDir" class="info-text"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-tint info-icon"></i>
+                        <span id="humidity" class="info-text"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-leaf info-icon"></i>
+                        <span id="airQuality" class="info-text"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 空状态区域 -->
+        <section id="emptyState" class="empty-state">
+            <i class="fas fa-map-marker-alt empty-icon"></i>
+            <p class="empty-text">输入城市名，开始查询天气吧～</p>
+        </section>
+
+        <!-- 收藏列表区域 -->
+        <section class="collection-section">
+            <div class="collection-header">
+                <h2 class="collection-title">
+                    <i class="fas fa-bookmark"></i> 我的收藏
+                </h2>
+                <span id="collectionCount" class="collection-count">0 个城市</span>
+            </div>
+            <div id="collectionList" class="collection-list"></div>
+        </section>
+    </div>
+
+    <!-- 备注编辑弹窗 -->
+    <div id="remarkModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">编辑备注</h3>
+                <button id="closeModal" class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="remarkInput" class="remark-input" placeholder="请输入备注（如老家、公司）">
+            </div>
+            <div class="modal-footer">
+                <button id="cancelRemark" class="btn cancel-btn">取消</button>
+                <button id="saveRemark" class="btn save-btn">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本引入 -->
+    <script src="weatherApi.js"></script>
+    <script src="collection.js"></script>
+</body>
+</html>
