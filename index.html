@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherApp - 查询天气</title>
+    <title>WeatherApp - 专业天气查询</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>WeatherApp - 查询天气</h1>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">WeatherApp</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">功能</a></li>
+                    <li><a href="#">关于</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <div id="weather-info">
-            <!-- 展示天气数据 -->
+    <main>
+        <div class="hero-section">
+            <h2>查询世界各地的天气</h2>
+            <p>输入城市名称，获取实时天气数据。</p>
         </div>
 
-        <div>
-            <h2>查询/添加城市天气</h2>
-            <input type="text" id="city-name" placeholder="输入城市名">
-            <button id="add-city">查询城市</button>
+        <section class="weather-search">
+            <h2>查询城市天气</h2>
+            <div class="search-box">
+                <input type="text" id="city-name" placeholder="输入城市名">
+                <button id="add-city">查询天气</button>
+            </div>
+        </section>
+
+        <section id="weather-info" class="weather-info">
+            <!-- 天气数据将显示在这里 -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 WeatherApp. All Rights Reserved.</p>
         </div>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

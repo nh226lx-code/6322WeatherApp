@@ -1,37 +1,157 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* 全局样式 */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
 }
 
 h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    background-color: #0f4b5c;
+    color: white;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Main Section */
+main {
+    padding: 40px 20px;
     text-align: center;
 }
 
-button {
+/* Hero Section */
+.hero-section {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.hero-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+/* Weather Search */
+.weather-search h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    font-size: 16px;
+    background-color: #0f4b5c;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
-button:hover {
-    background-color: #45a049;
+.search-box button:hover {
+    background-color: #1abc9c;
 }
 
-#weather-info {
-    margin-top: 20px;
+/* Weather Information */
+.weather-info {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.weather-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+}
+
+.weather-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.weather-card p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
 }
