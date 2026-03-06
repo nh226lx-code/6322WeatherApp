@@ -305,11 +305,11 @@ body {
 }
 
 .footer-container {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     color: #ffffff;
 }
 
@@ -324,4 +324,5 @@ body {
     .weather-grid {
         grid-template-columns: 1fr;
     }
+
 }
